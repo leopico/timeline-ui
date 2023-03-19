@@ -7,15 +7,27 @@
     <title>Timeline using tailwindcss</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased bg-gray-100 text-gray-800">
+<body class="antialiased bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white">
     <div class="relative container mx-auto px-6 flex flex-col space-y-8">
+        <div class="flex justify-end space-x-3 mt-3">
+            <span class="text-sm text-semibold text-gray-600 dark:text-gray-50">Light</span>
+            <div class="">
+                <input type="checkbox" name="" id="toggle" class="hidden" />
+                <label for="toggle">
+                    <div class="w-9 h-5 flex items-center bg-gray-200 p-1 rounded-full">
+                        <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-out cursor-pointer"></div>
+                    </div>
+                </label>
+            </div>
+            <span class="text-sm text-semibold text-gray-800 dark:text-gray-200">Dark</span>
+        </div  >
         <div class="absolute w-2 h-full bg-white shadow-md inset-0 left-17 z-0"></div>
         <div class="relative z-10">
             <img class="h-24 w-24 object-cover rounded-full shadow-md border-4 border-white xs:absolute"
              src="https://images.pexels.com/photos/2245436/pexels-photo-2245436.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
              <div class="relative pt-2 xs:pl-28 xs:pt-0">
-                <div aria-hidden="true" class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26"></div>
-                <div class="bg-white p-6 rounded-md shadow-md">
+                <div aria-hidden="true" class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white dark:bg-gray-400 xs:top-11 xs:left-26"></div>
+                <div class="bg-white p-6 rounded-md shadow-md dark:bg-gray-600">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quos facilis itaque recusandae nostrum! Repellendus ad eligendi corrupti enim accusantium ipsam. Rem quam sapiente labore veniam. Ab libero eos porro!
                 </div>
              </div>
@@ -26,8 +38,8 @@
                 alt="" />
             <div class="relative pt-2 xs:pl-28 xs:pt-0">
                 <div aria-hidden="true"
-                    class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26"></div>
-                <div class="bg-white p-6 rounded-md shadow-md">
+                    class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white dark:bg-gray-400 xs:top-11 xs:left-26"></div>
+                <div class="bg-white p-6 rounded-md shadow-md dark:bg-gray-600">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quos facilis itaque recusandae nostrum!
                     Repellendus ad eligendi corrupti enim accusantium ipsam. Rem quam sapiente labore veniam. Ab libero eos
                     porro!
@@ -40,8 +52,8 @@
                 alt="" />
             <div class="relative pt-2 xs:pl-28 xs:pt-0">
                 <div aria-hidden="true"
-                    class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26"></div>
-                <div class="bg-white p-6 rounded-md shadow-md">
+                    class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white dark:bg-gray-400 xs:top-11 xs:left-26"></div>
+                <div class="bg-white p-6 rounded-md shadow-md dark:bg-gray-600">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quos facilis itaque recusandae nostrum!
                     Repellendus ad eligendi corrupti enim accusantium ipsam. Rem quam sapiente labore veniam. Ab libero eos
                     porro!
@@ -54,8 +66,8 @@
                 alt="" />
             <div class="relative pt-2 xs:pl-28 xs:pt-0">
                 <div aria-hidden="true"
-                    class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26"></div>
-                <div class="bg-white p-6 rounded-md shadow-md">
+                    class="absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white dark:bg-gray-400 xs:top-11 xs:left-26"></div>
+                <div class="bg-white p-6 rounded-md shadow-md dark:bg-gray-600">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quos facilis itaque recusandae nostrum!
                     Repellendus ad eligendi corrupti enim accusantium ipsam. Rem quam sapiente labore veniam. Ab libero eos
                     porro!
@@ -64,4 +76,17 @@
         </div>
     </div>
 </body>
+<script>
+    const checkBox = document.querySelector("#toggle");
+    const html = document.querySelector("html");
+
+    const toggleDarkMode = function() {
+        checkBox.checked ? html.classList.add("dark") : html.classList.remove("dark");
+    }
+
+    toggleDarkMode();
+
+    checkBox.addEventListener("click", toggleDarkMode);
+
+</script>
 </html>
